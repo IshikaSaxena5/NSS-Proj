@@ -1,5 +1,5 @@
-import React from 'react';
-import { Route } from 'react-router-dom';
+import React, { createContext, useReducer } from 'react';
+import { Route, Switch } from 'react-router-dom';
 import "./App.css";
 import Home from './components/Home';
 import Navbar from './components/Navbar';
@@ -7,11 +7,12 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Login from './components/Login';
 import Signup from './components/Signup';
-
-const App = () => {
-  return (
-  <>
-  <Navbar/>
+import Logout from './components/Logout';
+import { initialState,reducer } from '../src/reducer/UseReducer';
+export const  UserContext = createContext();
+const Routing=()=>{
+  return(
+  <Switch>
   <Route exact path="/" >
     <Home/>
   </Route>
@@ -27,7 +28,22 @@ const App = () => {
   <Route path="/signup" >
     <Signup/>
   </Route>
-  </>
+  <Route path="/logout" >
+    <Logout/>
+  </Route>
+  </Switch>
+  )
+}
+
+const App = () => {
+  const [state,dispatch]=useReducer(reducer,initialState);
+  return (
+   <>
+   <UserContext.Provider value={{state,dispatch}}>
+     <Navbar/>
+     <Routing/>
+   </UserContext.Provider>
+   </>
   )
 };
 

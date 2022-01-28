@@ -47,7 +47,7 @@ const About = () => {
                  <div className='col-md-6'>
                     <div className='profile-head'>
                        <h5>{userData.name}</h5>
-                       <h6>Web Developer</h6>
+                       <h6>{userData.work}</h6>
                        <p className='profile-rating mt-3 mb-5'>RANKINGS:<span>1/10</span></p>
                        <ul className="nav nav-tabs" role="tablist">
                           <li className="nav-link active"><a id="home-tab" data-toggle="tab" href="#home" role="tab">About</a></li>

@@ -1,7 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState,useContext } from 'react'
 import { Navlink,useHistory } from 'react-router-dom';
 import signpic from "../photos/signup.jpeg"
+import { UserContext } from "../App";
 const Login = () => {
+  const {state,dispatch} = useContext(UserContext);
   const history = useHistory();
   const [email,setEmail] = useState('');
   const [password,setPassword] = useState('');
@@ -21,6 +23,7 @@ const loginUser = async(e)=>{
     window.alert("Invalid Credentials");
   }
   else{
+    dispatch({type:"USER",payload:true});
     window.alert("Login Succesfull");
     console.log("Successful");
     history.push("/about");

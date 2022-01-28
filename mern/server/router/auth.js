@@ -109,4 +109,11 @@ router.get('/',(req,res) =>{
       console.log(error);
     }
   });
+
+  //logout Page
+  router.get('/logout',(req,res)=>{
+    console.log(`Hello logout`);
+    res.clearCookie('jwtoken',{path:'/'});
+    res.status(200).send('user logout');
+  })
   module.exports = router;
