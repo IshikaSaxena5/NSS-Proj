@@ -2,121 +2,7 @@ import React from 'react';
 import { NavLink , useHistory} from 'react-router-dom';
 import signpic from "../photos/signup.jpeg"
 import { useState } from "react";
-/*
-const Signup = () => {
-  const history = useHistory();
-  const [user,setUser]=useState({
-    name:"",phone:"",email:"",work:"",password:"",cpassword:""
-  });
-  let name,value;
-  const handleInputs=(e)=>{
-    console.log(e);
-    name = e.target.name;
-    value = e.target.value;
-    setUser({...user,[name]:value});
-  }
-   const PostData = async(e)=>{
-    e.preventDefault();
-    const {name,email,phone,work,password,cpassword}=user;
-    const res = await fetch("/register",{
-     method:"POST",
-     headers:{
-      "Content-Type" : "application/json"
-     },
-     body:JSON.stringify({
-      name,email,phone,work,password,cpassword
-     })
-    });
-    const data = await res.json()
-    if(data.status===422||!data){
-      window.alert("Invalid Registration");
-      console.log("Invalid Registration");
-    }
-    else{
-      window.alert("Registration Succeesfull");
-      console.log("Registration Succeesfull");
-      history.push("/login");
-    }
-   }
-  
-    return (
-        <>
-        <h2 className='signup-heading'>Registration Form</h2>
-           <section className='signup'>
-              <div className='container mt-5'>
-                  <div className='signup-content'>
-                  
-                      <div className='signup-form'>
-                      
-                        <form method='POST'>
-                        <div class="form-group-full">
-                          <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" name="name"class="form-control" id="name" 
-                            value={user.name}
-                            onChange={handleInputs}
-                            placeholder="Full Name"/>
-                          </div>
-                          <div class="form-group">
-                            <label for="Phone">Phone Number</label>
-                            <input type="number" name="phone" class="form-control" id="phone" 
-                            value={user.phone}
-                            onChange={handleInputs}
-                            placeholder="Phone Number"/>
-                          </div>
-                          <div class="form-group">
-                          <label for="Email">Email address</label>
-                            <input type="email" name="email" class="form-control" id="email" 
-                            value={user.email}
-                            onChange={handleInputs}
-                            placeholder="Enter email"/>
-                            <small id="emailHelp" name="name" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                          </div>
-                          <div class="form-group">
-                          <label for="work">Work</label>
-                            <input type="text" name="work"class="form-control" id="work" 
-                            value={user.work}
-                            onChange={handleInputs}
-                            placeholder="Work"/>
-                          </div>
-                          <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="password" name="password" class="form-control" id="password" 
-                            value={user.password}
-                            onChange={handleInputs}
-                            placeholder="Password"/>
-                            </div>
-                          <div class="form-group">
-                            <label for="cpassword">Confirm Password</label>
-                            <input type="password" name="cpassword" class="form-control" id="cpassword" 
-                            value={user.cpassword}
-                            onChange={handleInputs}
-                            placeholder="Confirm Password"/>
-                          </div>
-                          <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1"/>
-                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                          </div>
-                          <button type="submit" class="btn btn-primary" value="register" onclick={PostData}>Register</button>
-                          </div>
-                        </form>
-                        <div className='pic-refer'>
-                        <div>
-                        <img src={signpic} alt="signpic"/>
-                        </div>
-                        <div className='moveto'>
-                        <a  href="/Login">Already A Member</a>
-                        </div>
-                        </div>
-                        </div>     
-                      </div>
-                  </div>
-           </section>
-        </>
-    )
-}
 
-export default Signup*/
 const Signup = () => {
 
   const history=useHistory();
@@ -165,6 +51,9 @@ const PostData= async(e)=>{
 
 
 
+}
+const CallLogin=()=>{
+  history.push('/login');
 }
 
 return (
@@ -254,7 +143,7 @@ return (
                         <img src={signpic} alt="signpic"/>
                         </div>
                         <div className='moveto'>
-                        <a  href="/Login">Already A Member</a>
+                        <button onClick={CallLogin}>Already A Member</button>
                         </div>
                         </div>
           </div>

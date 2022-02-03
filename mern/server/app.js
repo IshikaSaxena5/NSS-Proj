@@ -1,7 +1,10 @@
 const dotenv = require("dotenv");
 const mongoose = require('mongoose');
 const express = require('express');
+// const cors = require('cors');
+//const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser')
+// const paymentRoute = require('./paymentRoute')
 const app = express();
 require('./db/connection');
 app.use(cookieParser())
@@ -33,6 +36,9 @@ app.get('/aboutme',middleware,(req,res) =>{
   app.get('/register',(req,res) =>{
     res.send(`hello world from register`);
   });*/
+  // app.use(cors())
+  // app.use(bodyParser.json())
+  // app.use('/api',paymentRoute)
 
 app.listen(PORT,()=>{
     console.log(`server is running at ${PORT}`);

@@ -63,18 +63,20 @@ router.get('/',(req,res) =>{
       if(userLogin)
       {
       const isMatch = await bcrypt.compare(password,userLogin.password);
-      token = await userLogin.generateAuthToken();
+      
+         token = await userLogin.generateAuthToken();
       console.log(token);
       res.cookie("jwtoken",token,{
         expires:new Date(Date.now()+25892000000),
         httpOnly:true
       });
+      
       if(!isMatch)
        {
-         res.status(400).json({error:"Invalid Credentials"});
+         res.send(400).json({error:"Invalid Credentials"});
        }
        else{
-         res.json({message:"user Signin Successfully"});
+        res.json({message:"user Signin Successfully"});
        }
       }else{
         res.status(400).json({error:"Invalid Credentials"});
@@ -88,6 +90,10 @@ router.get('/',(req,res) =>{
     console.log(`Hello About`);
     res.send(req.rootUser);
   });
+  // router.get('/navbar',authenticate,(req,res) =>{
+  //   console.log(`Hello login`);
+  //   if(!res.)
+  // });
   router.get('/getdata',authenticate,(req,res)=>{
     console.log(`Hello About`);
     res.send(req.rootUser);
@@ -109,6 +115,10 @@ router.get('/',(req,res) =>{
       console.log(error);
     }
   });
+  //AboutUs Page
+  router.get('/aboutus',(req,res)=>{
+    res.status(200).json({message:'hii from aboutus'});
+  })
 
   //logout Page
   router.get('/logout',(req,res)=>{
@@ -116,4 +126,6 @@ router.get('/',(req,res) =>{
     res.clearCookie('jwtoken',{path:'/'});
     res.status(200).send('user logout');
   })
+
+
   module.exports = router;

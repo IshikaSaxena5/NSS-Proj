@@ -9,12 +9,15 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import Logout from './components/Logout';
 import { initialState,reducer } from '../src/reducer/UseReducer';
+import Aboutus from './components/Aboutus';
 export const  UserContext = createContext();
 const Routing=()=>{
   return(
   <Switch>
   <Route exact path="/" >
     <Home/>
+  </Route><Route path="/aboutus" >
+    <Aboutus/>
   </Route>
   <Route path="/about" >
     <About/>

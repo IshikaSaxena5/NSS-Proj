@@ -19,16 +19,20 @@ const loginUser = async(e)=>{
     })
   });
   const data = res.json();
-  if(data.json===400||!data){
+  console.log(data);
+  if(res.status===400||!data){
     window.alert("Invalid Credentials");
   }
   else{
     dispatch({type:"USER",payload:true});
     window.alert("Login Succesfull");
     console.log("Successful");
-    history.push("/about");
+    history.push("/");
   }
 }
+const CallRegister=()=>{
+  history.push('/signup');
+ }
     return (
         <>
            <h2 className='heading'>Sign In Form</h2>
@@ -41,21 +45,21 @@ const loginUser = async(e)=>{
                         <img src={signpic} alt="signinpic"/>
                         </div>
                         <div className='moveto'>
-                        <a  href="/Signup">Not A Member</a>
+                        <button onClick={CallRegister}>Not A Member</button>
                         </div>
                         </div>
                         <form method="POST">
                         <div class="loginform-group">
                           <div class="form-group">
-                          <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" className="form-control" id="exampleInput" 
+                          <label for="email">Email address</label>
+                            <input type="email" className="form-control" id="exampleInput" name='email'
                             value={email}
                             onChange={(e)=>setEmail(e.target.value)}
                             placeholder="Enter email"/><ion-icon name="mail-sharp"></ion-icon>
                           </div>
                           <div>
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" className="form-control" id="exampleInput" 
+                            <label for="password">Password</label>
+                            <input type="password" className="form-control" id="exampleInput" name='password'
                             value={password}
                             onChange={(e)=>setPassword(e.target.value)}
                             placeholder="Password"/>

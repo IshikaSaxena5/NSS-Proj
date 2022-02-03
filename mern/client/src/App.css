@@ -36,31 +36,327 @@
     transform: rotate(360deg);
   }
 }
+body{
+  /* background:url("C:\Users\HP\nssproj\mern\client\src\photos\home.JPG") no-repeat center center / cover; */
+  /* width: 100vw;
+  height: 85vh;
+  margin-top: -15%; */
+  width:100vw;
+ height: 85vh;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  font-family: 'Lobster', cursive;
+  /* align-items: center; */
+  /* background:url("C:\Users\HP\nssproj\mern\client\src\photos\home-img.jpg") */
+  /* no-repeat center center / cover;
+  position: relative;
+   */
+   
+}
+
+            /*Navbar*/
+.navbar{
+  background-color: transparent;
+  width: 100vw;
+}
 .ml-auto{
   margin-left: 70%;
 }
 .nav-link{
   font-size: 1.2rem;
+  font-family: 'Lobster', cursive;
+  font-weight: bold;
   text-align: justify;
-  color: grey;
 }
 
+         /*Home Page*/
 .home{
   height: 100%;
-  text-align: center;
-  margin: 15%;
+ text-align: center;
+ 
+  
 }
-.main{
-  border: 2px solid white;
-  background-image: linear-gradient(to right, white 50% , rgb(141, 227, 253));
+.home-page{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 0 10%;
+}
+.home-div{
+  font-family: 'Lobster', cursive;
+  margin: 15% 15%;
+  width: 50%;
+}
+.LRbtn{
+  font-size: 1rem;
+  margin: 5%;
+  background-color: powderblue;
+  border-radius: 30px;
+  padding: 2% 10%;
+  transition: 1s ease;
+}
+.LRbtn:hover{
+  background-color: rgb(204, 94, 94);
+}
+  /*About Us*/
+ 
+.carousel-item{
+  height: 80vh;
+}
+.carousel-item img{
+  width: 100vw;
+  height: 80vh;
+}
+/* .Events{
+  width:95vw;
+  margin: 3%;
+} */
+.aboutPage{
+ scroll-behavior: smooth;
+}
+.carousel-inner{
+  border: 2px solid black;
+}
+.EventDiv{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 5% 5%;
+    height: 27vh;
+    flex-wrap: wrap;
+
+}
+.carousel-inner img{
+  width: 100vw;
+  height: 90vh;
+  
 }
 
+
+/*---------------------------------------------------------nss info--------------------------------------------------*/
+.nss-info{
+  /* background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), 
+  url('https://careernursing.org/uploads/nss.jpg') 
+  no-repeat center center / cover; */
+
+  background-image: linear-gradient(rgba(58, 58, 145, 0.747), rgb(44, 139, 181));
+ 
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold!important;
+  
+}
+.nss-info h5{
+  width: 70vw;
+  text-align: center;
+
+  font-size: 35px;
+  /* z-index: 1!important; */
+  /* font-family: 'Dancing Script', cursive; */
+  font-weight: bold;
+  color:white;
+
+  
+  
+ 
+
+}
+.info-heading{
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Lobster', cursive;
+  font-weight: bold!important;
+  font-size: 55px!important;
+  color:black;
+  
+}
+
+
+
+
+/*events------------------------------------------------------*/
+.events-header{
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 60px;
+  font-family: 'Dancing Script', cursive;
+  font-weight: bold;
+  /* padding: 10px; */
+  margin: 15px;
+
+}
+.event-images{
+  position: relative;
+ 
+}
+.event-img{
+  width:450px;
+  height:350px; 
+}
+.event-info{
+  width:450px;
+  height:350px;
+  /* border:2px solid black; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.5);
+  position: absolute;
+  top:0;
+  left:11px;
+  z-index: 1;
+  color:white;
+  font-family: 'Dancing Script', cursive;
+  font-weight: bold;
+  text-transform: capitalize;
+  transition: all 1s ease;
+
+  
+  opacity:0;
+
+}
+.event-info h4{
+  font-size: 40px;
+  font-weight: bold;
+  
+}
+.event-info a{
+  text-decoration: none;
+  color: white;
+}
+
+.event-info:hover{  
+opacity:1;
+}
+.rd-img{
+  border: 2px solid black;
+}
+.rdImgCol{
+  width:500px;
+  height:450px;
+  
+}
+
+.rdImage{
+  width:100%;
+  height:100%;
+  transition: all 1.5s ease;
+}
+.rdImage:hover{
+  transform: scale(1.1);
+}
+.members{
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Lobster', cursive;
+}
+.members h1{
+  font-weight: bold;
+  font-size: 50px;
+}
+
+.team{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+}
+.core{
+  margin: 5% 5% 0 5%;
+}
+.col-lg-4{
+  margin-top: 10% !important;
+}
+.card{
+  width:300px;
+  height:400px;
+
+}
+.cardBody{
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Dancing Script', cursive;
+  
+  
+}
+.cardBody h5{
+  font-weight: bold;
+  font-size: 30px;
+}
+.cradRow{
+  margin: 5%;
+}
+.card-img-top{
+  transition: all 1.5s ease;
+}
+.card-img-top:hover{
+  transform: scale(1.1);
+}
+.about-contact-form{
+  text-align: center;
+  margin: 5% 5%;
+}
+.footer-div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.ac-row{
+  display: flex;
+  flex-direction: column;
+  margin-top: 2%;
+}
+.about-contact-inputs{
+  display: flex;
+  flex-direction: column;
+}
+.about-contact_info_item{
+  display: flex;
+  flex-direction: row;
+  height: 15vh;
+  width: 30vw;
+  /* text-align: center; */
+}
+.about-contact_form{
+  width: 40vw;
+}
+.text-area textarea{
+  background-color: inherit;
+  margin-left: 5%;
+}
+.about-contact-details{
+  float: left;
+  margin-top: 5%;
+}
+.about-contact-inputs input{
+  background-color: inherit;
+  border:none;
+  border-bottom: 1px solid grey;
+  outline: none;
+  margin-left: 2%;
+  width: 80%;
+}
+.footer{
+  background-color: black;
+  color: white;
+}
+.media i{
+  margin-left: 5% !important;
+}
+
+
+      /*Profile Form*/
 .main-container{
   margin: 2% 25%;
 }
-.container{
-  box-shadow: 5px 5px 5px 5px grey;
-}
+
 .container form{
   display: flex;
   flex-direction: row;
@@ -81,14 +377,20 @@
   width: 70%;
 }
 .profile-edit-btn{
-  margin: 35%;
   border-radius: 10%;
   color:grey;
   background-color: rgb(237, 244, 245);
   text-align: center;
+  height: 10%;
+  margin: 35% 0;
+}
+.col-md-2 {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .profile-head{
-  margin: 10% 0;
+  margin: 10%;
 }
 .profile-head h6{
   color: rgb(27, 188, 228);
@@ -105,13 +407,16 @@
   height: 10%;
 }
 
+     /*Sign Up*/
 .heading{
   text-align: center;
   margin: 2% 0 -5% 0;
+  font-family: 'Lobster', cursive;
 }
 .signup {
   box-shadow: 5px 5px 5px 5px grey;
   margin: 7% 25%; 
+  background-color: white;
 }
 form{
   margin-top: 3%;
@@ -128,6 +433,8 @@ form{
 .btn-div{
   margin: 5% 15%;
 }
+
+      /*Sign In*/
 .heading{
   text-align: center;
   margin: 2% 0 -5% 0;
@@ -135,6 +442,7 @@ form{
 .login {
   box-shadow: 5px 5px 5px 5px grey;
   margin: 7% 30%; 
+  background-color: white;
 }
 .login-form{
   display: flex;
@@ -149,16 +457,27 @@ form{
 .moveto{
   text-align: center;
 }
+.moveto button{
+  border: none;
+  background: none;
+  color: blue;
+}
 .login-pic-refer{
   margin: 10% 0 ;
 }
+.loginform-group input{
+  border: none;
+  border-bottom: 1px solid grey;
+}
+     /*Contact Form*/
 
 .contact_info_item{
   display: inline-flex;
   box-shadow: 5px 5px 5px 5px grey;
-  margin: 5% 5%;
-  height: 70%;
+  /* margin: 5% 5%; */
+  height: 90%;
   width: 80%;
+  background-color: white;
 }
 span{
   margin: 5% 4%;
@@ -172,6 +491,7 @@ span{
   margin: 5% 20%;
   text-align: center;
   box-shadow: 5px 5px 5px 5px grey;
+  background-color: white;
 }
 .contact-inputs{
   margin: 2%;
@@ -182,3 +502,5 @@ span{
 .contact-details button{
   margin: 0 0 2% 0 ;
 }
+
+

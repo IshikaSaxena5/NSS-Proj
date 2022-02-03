@@ -3,9 +3,13 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { NavLink } from 'react-router-dom';
 import logo from '../photos/logo.png';
 import { UserContext } from "../App";
+import Cookies from "js-cookie";
 
-
-  const RenderMenu=()=>{
+const Navbar = () => {
+  const {state,dispatch} = useContext(UserContext);
+  
+   const RenderMenu=()=>{
+     
    if(state){
      return(
        <>
@@ -13,14 +17,18 @@ import { UserContext } from "../App";
         <NavLink  exact activeClassName="active-page" className="nav-link" to="/">Home </NavLink >
       </li>
       <li className="nav-item">
-        <NavLink exact activeClassName="active-page" className="nav-link" to="/about">About</NavLink>
+        <NavLink exact activeClassName="active-page" className="nav-link" to="/aboutus">AboutUs</NavLink>
       </li>
       <li className="nav-item">
         <NavLink exact activeClassName="active-page" className="nav-link" to="/contact">Contact</NavLink >
       </li>
       <li className="nav-item">
-        <NavLink  exact activeClassName="active-page" className="nav-link" to="/logout">LogOut</NavLink >
+        <NavLink exact activeClassName="active-page" className="nav-link" to="/about">Profile</NavLink>
       </li>
+      <li className="nav-item">
+        <NavLink exact activeClassName="active-page" className="nav-link" to="/logout">LogOut</NavLink >
+      </li>
+      
        </>
      )
    }else{
@@ -30,7 +38,7 @@ import { UserContext } from "../App";
         <NavLink  exact activeClassName="active-page" className="nav-link" to="/">Home </NavLink >
       </li>
       <li className="nav-item">
-        <NavLink exact activeClassName="active-page" className="nav-link" to="/about">About</NavLink>
+        <NavLink exact activeClassName="active-page" className="nav-link" to="/aboutus">AboutUs</NavLink>
       </li>
       <li className="nav-item">
         <NavLink exact activeClassName="active-page" className="nav-link" to="/contact">Contact</NavLink >
@@ -47,7 +55,7 @@ import { UserContext } from "../App";
   }
   return (
     <>
-   <nav className="navbar navbar-expand-lg navbar-light bg-light">
+   <nav className="navbar navbar-expand-lg ">
   <NavLink className="navbar-brand" to="#">
     <img src={logo} alt="logo" width="80px" height="80px"/>
       </NavLink>
