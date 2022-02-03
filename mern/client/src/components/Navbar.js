@@ -1,10 +1,10 @@
-import React,{useContext} from 'react'
+import React,{useContext,useEffect} from 'react'
 import 'bootstrap/dist/css/bootstrap.css';
 import { NavLink } from 'react-router-dom';
 import logo from '../photos/logo.png';
 import { UserContext } from "../App";
-const Navbar = () => {
-  const {state,dispatch} = useContext(UserContext);
+
+
   const RenderMenu=()=>{
    if(state){
      return(

@@ -1,30 +1,7 @@
 import React ,{useEffect,useState} from 'react'
-
+// import homeimg from '../photos/home.JPG'
 const Home = () => {
-        const [userName,setUserName]=useState('');
-        const [ show , setShow] = useState(false);
-       const userHomePage = async()=>{
-          try{
-            const res = await fetch('/getdata',{
-            method:"GET",
-            headers:{
-               "Content-Type":"application/json"
-            }
-          });
     
-          const data = await res.json();
-          console.log(data);
-          setUserName(data.name);
-          setShow(true);
-    
-          }catch(err){
-            console.log(err);
-          }
-        }
-        useEffect(() => {
-            userHomePage();
-          
-          }, []);
     return (
         <div className='main'>
         <div className='home'>
